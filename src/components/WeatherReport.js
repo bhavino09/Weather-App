@@ -72,7 +72,7 @@ export default function WeatherReport() {
           onChange={(e) => setCity(e.target.value)}
         />
       </div>
-      {weatherData && weatherData.name && position?.longitude === null ? (
+      {weatherData && weatherData.name ? (
         <div className="weather-info">
           <h2>Weather Information</h2>
           <p>
@@ -88,8 +88,6 @@ export default function WeatherReport() {
             <strong>Weather :</strong> {weatherData.weather[0].description}
           </p>
         </div>
-      ) : position?.latitude === null ? (
-        ""
       ) : (
         err
       )}
